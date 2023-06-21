@@ -16,7 +16,7 @@ public class OderApp {
         Member member= new Member(memberId,"memberA", Grade.VIP);
         memberService.join(member);
 
-        Order order = orderService.createOrder(memberId, "ItemA", 10000);
+        Order order = orderService.createOrder(memberId, "ItemA", 30000);
 
         System.out.println("order = " + order);
         System.out.println("order = " + order.calculatePrice());
