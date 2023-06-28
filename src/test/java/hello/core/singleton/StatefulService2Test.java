@@ -21,8 +21,8 @@ class StatefulService2Test {
 
         int userB = statefulService2.order("userB" , 20000);
 
-        System.out.println(userA);
-        System.out.println(userB);
+        System.out.println("userA= " +userA);
+        System.out.println("userB= " +userB);
 
 
         assertThat(userA).isEqualTo(10000);
