@@ -17,7 +17,7 @@ public class OderApp {
         ApplicationContext app= new AnnotationConfigApplicationContext(AppConfig.class);
 
         MemberService memberService = app.getBean("mmm", MemberService.class);
-        OrderService orderService = app.getBean("orderService", OrderService.class);
+        OrderService orderService = app.getBean("oderService", OrderService.class);
 
 
         Long memberId=1L;
