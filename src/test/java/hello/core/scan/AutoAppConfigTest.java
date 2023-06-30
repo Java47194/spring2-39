@@ -1,7 +1,9 @@
 package hello.core.scan;
 
 import hello.core.AutoAppConfig;
+import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
+import hello.core.member.MemoryMemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -16,5 +18,9 @@ public class AutoAppConfigTest {
         MemberService bean = ac.getBean(MemberService.class);
 
         assertThat(bean).isInstanceOf(MemberService.class);
+
+
+
+
     }
 }
