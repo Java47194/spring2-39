@@ -8,21 +8,29 @@ import hello.core.member.MemoryMemberRepository;
 
 import hello.core.member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OrderServiceImpl implements OrderService{
 
 
-    private final MemberRepository memberRepository;
-    private final DiscountPolicy discountPolicy; //dip: 추상에만 의존 해라
+    private  MemberRepository memberRepository;
+    private  DiscountPolicy discountPolicy; //dip: 추상에만 의존 해라
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public void setMemberRepository(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+    @Autowired
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
+
+    /*  public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
-//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy(); 고정 할인 금액 dip위반
-    //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy(); dip위반
+*/
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

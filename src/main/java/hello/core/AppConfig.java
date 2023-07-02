@@ -12,7 +12,7 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration//설정 정보 ,구성 정보
+@Configuration//설정 정보 ,구성 정보
 public class AppConfig {
 
     //@Bean memberService -> new MemoryMemberRepository()
@@ -45,7 +45,7 @@ public class AppConfig {
     @Bean
     public OrderService orderService(){
         System.out.println("call AppConfig.orderService");
-        return new OrderServiceImpl(memberRepository(), discountPolicy());
+        return null;//new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean
     public DiscountPolicy discountPolicy(){
