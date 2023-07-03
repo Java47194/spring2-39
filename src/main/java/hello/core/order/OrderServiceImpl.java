@@ -1,5 +1,6 @@
 package hello.core.order;
 
+import hello.core.annotion.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
@@ -22,7 +23,7 @@ public class OrderServiceImpl implements OrderService{
     private final DiscountPolicy discountPolicy; //dip: 추상에만 의존 해라
 
 /*@RequiredArgsConstructor 기능을 사용하면 final이 붙은 필드를 모아 자동으로 생성자를 만들어줌 */
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("subDiscountPolicy")DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
 
