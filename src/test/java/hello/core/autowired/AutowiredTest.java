@@ -15,8 +15,6 @@ public class AutowiredTest {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestBean.class);
 
     }
-
-
     static class TestBean{
         @Autowired(required = false) //의존관계가 없으면 setBean1 메서드가 호출이 안된다
         public void setNoBean1(Member noBean1){
@@ -24,15 +22,14 @@ public class AutowiredTest {
         }
 
         @Autowired
-        public void setNoBean2(@Nullable Member noBean2){
-            System.out.println("noBean1 = " + noBean2);
+        public void setNo(@Nullable Member noBean2){
+            System.out.println("noBean2 = " + noBean2);
         }
 
         @Autowired
         public void setNoBean1(Optional<Member> noBean3){
-            System.out.println("noBean1 = " + noBean3);
+            System.out.println("noBean3 = " + noBean3);
         }
-
 
     }
 }

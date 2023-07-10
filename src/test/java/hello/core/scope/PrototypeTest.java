@@ -24,8 +24,8 @@ public class PrototypeTest {
 
         assertThat(bean1).isNotSameAs(bean2);
 
-        bean1.destroy();;
-        bean2.destroy();;
+        // bean1.destroy(); 프로토타입 스코프는 종료메서드를 직접 호출해야된다
+        // bean2.destroy();
 
         ac.close();
     }

@@ -16,9 +16,11 @@ import org.springframework.context.annotation.FilterType;
 // 자동으로 스프링빈을 긁어 모음
 public class AutoAppConfig {
 
+/*
     @Bean(name = "memoryMemberRepository")
     MemberRepository memberRepository(){
         return new MemoryMemberRepository();
     }
+*/
 
 }
